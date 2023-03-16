@@ -30,4 +30,9 @@ public class Knight implements Piece {
         }
         return List.copyOf(whiteKnights);
     }
+
+    @Override
+    public Team getTeam() {
+        return team;
+    }
 }

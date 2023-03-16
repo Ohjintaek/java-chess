@@ -30,4 +30,9 @@ public class Rook implements Piece {
         }
         return List.copyOf(whiteRooks);
     }
+
+    @Override
+    public Team getTeam() {
+        return team;
+    }
 }

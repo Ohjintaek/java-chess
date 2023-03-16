@@ -10,10 +10,14 @@ import java.util.List;
 import java.util.Map;
 
 public class ChessBoardDto {
-    private List<List<String>> chessBoard;
+    private List<List<PieceDto>> chessBoard;
 
-    public static ChessBoardDto of(Map<Square, Piece> pieces) {
-        final List<List<String>> chessBoard = initChessBoard();
+    private ChessBoardDto(final List<List<PieceDto>> chessBoard) {
+        this.chessBoard = chessBoard;
+    }
+
+    public static ChessBoardDto of(final Map<Square, Piece> pieces) {
+        final List<List<PieceDto>> chessBoard = initChessBoard();
         for (Square square : pieces.keySet()) {
             final File file = square.getFile();
             final int row = 8 - square.getRank();
@@ -21,13 +25,18 @@ public class ChessBoardDto {
             chessBoard.get(row)
                       .set(column, PieceDto.from(pieces.get(square)));
         }
+        return new ChessBoardDto(chessBoard);
     }
 
-    private static List<List<String>> initChessBoard() {
-        List<List<String>> chessBoard = new ArrayList<>();
+    private static List<List<PieceDto>> initChessBoard() {
+        List<List<PieceDto>> chessBoard = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
-            chessBoard.add(new ArrayList<>(Collections.nCopies(8, ".")));
+            chessBoard.add(new ArrayList<>(Collections.nCopies(8, new PieceDto("white", "empty"))));
         }
+        return chessBoard;
+    }
+
+    public List<List<PieceDto>> getChessBoard() {
         return chessBoard;
     }
 }

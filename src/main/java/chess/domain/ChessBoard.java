@@ -5,7 +5,7 @@ import java.util.Map;
 public class ChessBoard {
     private final Map<Square, Piece> pieces;
 
-    public ChessBoard(Map<Square, Piece> pieces) {
+    ChessBoard(Map<Square, Piece> pieces) {
         this.pieces = pieces;
     }
 

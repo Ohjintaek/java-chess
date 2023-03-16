@@ -22,4 +22,9 @@ public class King implements Piece {
         }
         return whiteKing;
     }
+
+    @Override
+    public Team getTeam() {
+        return team;
+    }
 }

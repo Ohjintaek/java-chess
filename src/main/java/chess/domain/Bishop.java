@@ -31,4 +31,9 @@ public class Bishop implements Piece {
         }
         return List.copyOf(whiteBishops);
     }
+
+    @Override
+    public Team getTeam() {
+        return team;
+    }
 }

@@ -1,5 +1,7 @@
 package chess.view;
 
+import chess.controller.ChessBoardDto;
+
 import java.util.Scanner;
 
 public class InputView {

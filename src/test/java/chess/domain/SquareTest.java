@@ -15,8 +15,8 @@ public class SquareTest {
         @Nested
         @DisplayName("File과 Rank가 주어지면")
         class given_file_and_rank {
-            File file = File.A;
             Rank rank = Rank.ONE;
+            File file = File.A;
 
             @Test
             @DisplayName("해당 위치의 Square를 반환한다")
